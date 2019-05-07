@@ -1,0 +1,56 @@
+{
+    "title": "Article Search",
+    "description": "With the Article Search API, you can search New York Times articles from Sept. 18, 1851 to today, retrieving headlines, abstracts, lead paragraphs, links to associated multimedia and other article metadata.  \n\n Note: In URI examples and field names, italics indicate placeholders for variables or values. Brackets [ ] indicate optional items. Parentheses ( ) are not a convention -- when URIs include parentheses, interpret them literally.",
+    "docsUrl": "http://developer.nytimes.com/",
+    "url": "https://api.apis.guru/v2/specs/nytimes.com/article_search/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.nytimes.com/svc/search/v2",
+                    "https://api.nytimes.com/svc/search/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "apikey": {
+                "label": "api-key (apikey)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_articlesearch_json": {
+            "main": "./lib/actions/get_articlesearch_json.js",
+            "title": "Article Search",
+            "description": "Article Search requests use the following URI structure:\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_articlesearch_json.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

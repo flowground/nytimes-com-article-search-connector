@@ -1,0 +1,54 @@
+{
+    "type": "object",
+    "properties": {
+        "q": {
+            "required": false,
+            "type": "string"
+        },
+        "fq": {
+            "required": false,
+            "type": "string"
+        },
+        "begin_date": {
+            "required": false,
+            "type": "string"
+        },
+        "end_date": {
+            "required": false,
+            "type": "string"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "newest",
+                "oldest"
+            ]
+        },
+        "fl": {
+            "required": false,
+            "type": "string"
+        },
+        "hl": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        },
+        "page": {
+            "required": false,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10,
+            "default": 0
+        },
+        "facet_field": {
+            "required": false,
+            "type": "string"
+        },
+        "facet_filter": {
+            "required": false,
+            "type": "boolean",
+            "default": false
+        }
+    }
+}
